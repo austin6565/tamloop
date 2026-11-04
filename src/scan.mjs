@@ -34,13 +34,15 @@ export function startScan({ hypothesis, sources, judge = async () => ({ status: 
   record = async () => {}, persist = async () => {}, onUpdate = async () => {},
   phaseOneMs = 120_000, judgeConcurrency = 4, runId = randomUUID() }) {
   validate(hypothesis, sources);
+  const startedAt = new Date();
   const accounts = new Map();
   const sourceStatus = Object.fromEntries(sources.map((s) => [s.name, 'pending']));
   const errors = [];
   let pages = 0;
   let initialResolved = false;
   let resolveInitial;
-  const snapshot = (reason) => ({ runId, reason, pages, accounts: [...accounts.values()],
+  const snapshot = (reason) => ({ runId, reason, startedAt: startedAt.toISOString(),
+    elapsedMs: Date.now() - startedAt.getTime(), pages, accounts: [...accounts.values()],
     sourceStatus: { ...sourceStatus }, errors: [...errors] });
   const initial = new Promise((resolve) => { resolveInitial = resolve; });
   const finishInitial = (reason) => {

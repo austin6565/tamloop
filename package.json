@@ -4,6 +4,8 @@
   "description": "Observable, evidence-first TAM mapping with RunTune-compatible telemetry",
   "type": "module",
   "license": "Apache-2.0",
+  "repository": { "type": "git", "url": "https://github.com/austin6565/tamloop.git" },
+  "bugs": "https://github.com/austin6565/tamloop/issues",
   "engines": { "node": ">=22" },
   "exports": "./src/index.mjs",
   "bin": { "tamloop": "./src/cli.mjs" },

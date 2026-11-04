@@ -45,7 +45,8 @@ async function demo(args) {
   const initial = await scan.initial;
   const final = await scan.completion;
   process.stdout.write(`${JSON.stringify({ trace, initialCount: initial.accounts.length,
-    finalCount: final.accounts.length, statuses: Object.fromEntries(
+    initialElapsedMs: initial.elapsedMs, finalCount: final.accounts.length,
+    finalElapsedMs: final.elapsedMs, statuses: Object.fromEntries(
       ['candidate', 'qualified', 'needs_review', 'excluded'].map((s) =>
         [s, final.accounts.filter((x) => x.status === s).length])) }, null, 2)}\n`);
 }
@@ -67,11 +68,14 @@ async function scanCsv(args) {
       ? { status: 'candidate', reason: 'source claim; qualification pending' }
       : { status: 'needs_review', reason: 'source evidence missing' },
   });
-  await scan.initial;
+  const initial = await scan.initial;
+  await writeFile(out, `${JSON.stringify(initial, null, 2)}\n`);
   const result = await scan.completion;
   await writeFile(out, `${JSON.stringify(result, null, 2)}\n`);
   process.stdout.write(`${JSON.stringify({ runId, output: out, trace,
-    accounts: result.accounts.length, errors: result.errors }, null, 2)}\n`);
+    initialAccounts: initial.accounts.length, initialElapsedMs: initial.elapsedMs,
+    accounts: result.accounts.length, finalElapsedMs: result.elapsedMs,
+    errors: result.errors }, null, 2)}\n`);
 }
 
 async function main() {

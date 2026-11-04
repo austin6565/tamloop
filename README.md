@@ -11,6 +11,7 @@ This repository is an initial, provider-neutral implementation. It has no live s
 - Applies deterministic guards, entity-aware deduplication, exclusions, and source-preserving review states.
 - Never marks an account qualified or gives it an ICP score without evidence.
 - Returns an initial snapshot at a configurable deadline while the scan continues in the background.
+- Writes the provisional CLI map at the first-snapshot deadline, then replaces it with the completed map.
 - Records stage/provider durations and costs as portable JSONL events that RunTune can read.
 - Analyzes a trace for wall time, provider service time, peak concurrency, and long serial stages.
 
