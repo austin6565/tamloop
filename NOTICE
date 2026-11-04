@@ -1,0 +1,9 @@
+TAMLoop
+Copyright 2026 TAMLoop contributors
+
+TAMLoop interoperates with the portable JSONL evidence format documented by
+RunTune (https://github.com/kkrlstrm/runtune), Copyright 2026 Kai Karlstrom,
+Apache-2.0. No RunTune source code is included in this project.
+
+The architecture was informed by an end-to-end TAM scan diagram provided by
+the project owner. The diagram and client data are not redistributed here.

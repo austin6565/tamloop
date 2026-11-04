@@ -1,0 +1,6 @@
+Company,Domain,State,Entity Type,Source Claim,Evidence URL
+Northstar Clinics,northstar.example,CA,clinic group,verified,https://northstar.example/about
+Northstar Clinics,https://www.northstar.example/team,CA,clinic group,verified,https://northstar.example/team
+Lakeside Hospital,shared.example,IL,hospital,candidate,https://shared.example/lakeside
+Riverside Hospital,shared.example,IL,hospital,candidate,
+Excluded Vendor,vendor.example,CA,software vendor,candidate,https://vendor.example

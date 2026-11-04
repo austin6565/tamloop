@@ -1,0 +1,25 @@
+{
+  "runId": "synthetic-csv-demo",
+  "phaseOneMs": 100,
+  "hypothesis": {
+    "region": "US",
+    "vertical": "healthcare",
+    "icpProfiles": ["care delivery"],
+    "allowedRegions": ["CA", "IL"],
+    "excludedDomains": ["vendor.example"]
+  },
+  "sources": [
+    {
+      "name": "synthetic-directory",
+      "path": "accounts.csv",
+      "columns": {
+        "name": "Company",
+        "domain": "Domain",
+        "region": "State",
+        "entityType": "Entity Type",
+        "sourceStatus": "Source Claim",
+        "evidenceUrl": "Evidence URL"
+      }
+    }
+  ]
+}

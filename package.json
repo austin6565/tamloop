@@ -1,0 +1,12 @@
+{
+  "name": "tamloop",
+  "version": "0.1.0",
+  "description": "Observable, evidence-first TAM mapping with RunTune-compatible telemetry",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22" },
+  "exports": "./src/index.mjs",
+  "bin": { "tamloop": "./src/cli.mjs" },
+  "scripts": { "test": "node --test --test-isolation=none" },
+  "files": ["src", "README.md", "LICENSE", "NOTICE", "docs"]
+}
