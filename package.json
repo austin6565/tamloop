@@ -9,6 +9,6 @@
   "engines": { "node": ">=22" },
   "exports": "./src/index.mjs",
   "bin": { "tamloop": "./src/cli.mjs" },
-  "scripts": { "test": "node --test --test-isolation=none" },
+  "scripts": { "test": "node test/tamloop.test.mjs" },
   "files": ["src", "README.md", "LICENSE", "NOTICE", "docs"]
 }
